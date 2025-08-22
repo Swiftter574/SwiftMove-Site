@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SwiftMove — Fast, Reliable Home Services in Monterey & Santa Cruz</title>
+  <meta name="description" content="SwiftMove provides appliance installation, furniture assembly, handyman work, and pressure washing. Veteran-owned. Serving Monterey County, Santa Cruz County, and nearby areas." />
+  <meta property="og:title" content="SwiftMove — Fast, Reliable Home Services" />
+  <meta property="og:description" content="Appliance installation, furniture assembly, handyman, and pressure washing. Locally owned & veteran operated." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://YOUR-USERNAME.github.io/YOUR-REPO/" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1581578025234-95d9c9d3c3ed?q=80&w=1200&auto=format&fit=crop" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --brand: #0ea5e9;         /* sky-500 */
+      --brand-600: #0284c7;     /* sky-600 */
+      --ink: #0f172a;           /* slate-900 */
+      --muted: #475569;         /* slate-600 */
+      --bg: #f8fafc;            /* slate-50 */
+      --card: #ffffff;          /* white */
+      --ring: rgba(14, 165, 233, 0.35);
+      --success: #16a34a;
+      --warning: #f59e0b;
+      --danger: #ef4444;
+      --radius: 16px;
+      --shadow: 0 10px 25px rgba(2, 132, 199, 0.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, Noto Sans, "Apple Color Emoji", "Segoe UI Emoji";
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+    a { color: var(--brand-600); text-decoration: none; }
+    img { max-width: 100%; height: auto; border-radius: 12px; }
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header {
+      position: sticky; top: 0; z-index: 40;
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid #e2e8f0;
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; }
+    .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; letter-spacing: 0.2px; }
+    .brand .logo {
+      width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center;
+      background: linear-gradient(135deg, var(--brand), #38bdf8);
+      color: white; font-weight: 800;
+      box-shadow: var(--shadow);
+    }
+    .nav a { font-weight: 600; }
+    .nav-links { display: none; gap: 18px; }
+    .cta { display: flex; gap: 10px; align-items: center; }
+    .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 16px; border-radius: 999px; border: 1px solid #e2e8f0; background: white; font-weight: 600; }
+    .btn:hover { border-color: var(--brand); }
+    .btn.primary { background: var(--brand); color: white; border-color: var(--brand); box-shadow: var(--shadow); }
+    .btn.primary:hover { background: var(--brand-600); }
+    .btn.ghost { background: transparent; }
+
+    @media (min-width: 900px) {
+      .nav-links { display: flex; }
+    }
+
+    /* Hero */
+    .hero { padding: 64px 0 28px; }
+    .hero-wrap { display: grid; gap: 28px; align-items: center; }
+    @media (min-width: 900px) { .hero-wrap { grid-template-columns: 1.1fr 0.9fr; gap: 36px; } }
+    .eyebrow { display: inline-flex; align-items: center; gap: 8px; padding: 6px 12px; background: #e0f2fe; color: #075985; border-radius: 999px; font-weight: 600; font-size: 12px; }
+    h1 { font-size: clamp(28px, 4vw, 48px); line-height: 1.1; margin: 10px 0 8px; letter-spacing: -0.5px; }
+    .sub { color: var(--muted); margin-bottom: 18px; }
+    .badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+    .badge { background: white; border: 1px solid #e2e8f0; padding: 6px 10px; border-radius: 999px; font-size: 13px; }
+
+    /* Sections */
+    section { padding: 56px 0; }
+    .section-head { display: flex; align-items: end; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+    .section-title { font-size: clamp(22px, 3vw, 32px); margin: 0; }
+    .kicker { color: var(--muted); margin: 0; }
+
+    /* Cards grid */
+    .grid { display: grid; gap: 18px; }
+    @media (min-width: 700px) { .grid.cols-2 { grid-template-columns: repeat(2, 1fr);} }
+    @media (min-width: 960px) { .grid.cols-3 { grid-template-columns: repeat(3, 1fr);} }
+    @media (min-width: 1100px) { .grid.cols-4 { grid-template-columns: repeat(4, 1fr);} }
+
+    .card { background: var(--card); border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 18px; box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
+    .card h3 { margin: 8px 0 6px; }
+    .card p { color: var(--muted); margin: 0; }
+    .icon { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; background: #e0f2fe; color: #075985; font-weight: 800; }
+
+    .list { padding-left: 18px; color: var(--muted); }
+
+    /* Reviews */
+    .review { background: white; border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 18px; }
+    .stars { color: #fbbf24; font-size: 16px; letter-spacing: 1px; }
+    .reviewer { font-weight: 700; margin-top: 10px; }
+    .carousel { display: grid; grid-auto-flow: column; grid-auto-columns: 88%; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 8px; }
+    .carousel > * { scroll-snap-align: start; }
+    @media (min-width: 900px){ .carousel { grid-auto-columns: 32%; } }
+
+    /* Gallery */
+    .gallery { display: grid; gap: 10px; grid-template-columns: repeat(2, 1fr); }
+    @media (min-width: 900px){ .gallery { grid-template-columns: repeat(4, 1fr);} }
+
+    /* FAQ */
+    details { background: white; border: 1px solid #e2e8f0; border-radius: var(--radius); padding: 14px 16px; }
+    summary { cursor: pointer; font-weight: 700; }
+
+    /* Footer */
+    footer { background: white; border-top: 1px solid #e2e8f0; padding: 28px 0; }
+    .foot { display: grid; gap: 20px; }
+    @media (min-width: 960px){ .foot { grid-template-columns: 1.2fr 1fr 1fr; align-items: start; } }
+    .mini { font-size: 13px; color: var(--muted); }
+
+    /* Modals */
+    .modal { position: fixed; inset: 0; display: none; place-items: center; background: rgba(15,23,42,0.52); padding: 20px; }
+    .modal.open { display: grid; }
+    .modal-card { background: white; border: 1px solid #e2e8f0; border-radius: 18px; max-width: 900px; width: 100%; max-height: 85vh; overflow: auto; padding: 22px; }
+    .modal-card h2 { margin-top: 0; }
+    .modal-actions { display: flex; justify-content: end; margin-top: 14px; }
+
+    /* Utilities */
+    .mt-2{margin-top:8px}.mt-3{margin-top:12px}.mt-4{margin-top:16px}.mt-6{margin-top:24px}.mt-8{margin-top:32px}
+    .chips{display:flex;flex-wrap:wrap;gap:8px}
+    .chip{padding:6px 10px;border-radius:999px;border:1px solid #e2e8f0;background:#fff;font-size:13px}
+    .center{display:grid;place-items:center}
+    .hidden{display:none}
+  </style>
+</head>
+<body>
+  <!-- Header/Nav -->
+  <header>
+    <div class="container nav">
+      <div class="brand">
+        <div class="logo" aria-hidden="true">SM</div>
+        <a href="#top" aria-label="SwiftMove Home">SwiftMove</a>
+      </div>
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#services">Services</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#gallery">Photos</a>
+        <a href="#booking">Book</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="cta">
+        <a class="btn ghost" href="tel:+18317839010" aria-label="Call SwiftMove">📞 (831) 783‑9010</a>
+        <a class="btn primary" href="#booking" aria-label="Book SwiftMove">Book Now</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <main id="top" class="hero">
+    <div class="container hero-wrap">
+      <div>
+        <span class="eyebrow">Veteran-Owned • Local & Reliable</span>
+        <h1>Fast, Reliable Home Services</h1>
+        <p class="sub">Appliance installation, furniture assembly, handyman work, and pressure washing — serving Monterey County, Santa Cruz County, and nearby areas.</p>
+        <div class="badges">
+          <span class="badge">USMC Veteran Operated</span>
+          <span class="badge">Locally Owned</span>
+          <span class="badge">Clear, Upfront Pricing</span>
+        </div>
+        <div class="mt-6">
+          <a class="btn primary" href="#booking">Get a Quote</a>
+          <a class="btn" href="#services">See Services</a>
+        </div>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8?q=80&w=1200&auto=format&fit=crop" alt="Technician installing an appliance" loading="lazy" />
+      </div>
+    </div>
+  </main>
+
+  <!-- Services -->
+  <section id="services">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Our Services</h2>
+        <p class="kicker">Professional help for your home and business.</p>
+      </div>
+
+      <div class="grid cols-4">
+        <div class="card">
+          <div class="icon">⚡️</div>
+          <h3>Appliance Installation — Electric</h3>
+          <p>Dishwashers, ranges, ovens, washers/dryers (electric), refrigerators, and more. Clean installs with proper leveling and testing.</p>
+          <ul class="list mt-2">
+            <li>Disconnect & haul-away available</li>
+            <li>Water supply & drain hookup</li>
+            <li>Power checks & test cycles</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon">🔥</div>
+          <h3>Appliance Installation — Gas (Natural)</h3>
+          <p>Ranges, dryers, and other natural gas appliances with safe, leak-checked connections and ventilation checks.</p>
+          <ul class="list mt-2">
+            <li>Shutoff valve check</li>
+            <li>Thread sealant & leak test</li>
+            <li>Ignition & burn test</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon">⛽️</div>
+          <h3>Appliance Installation — Gasoline</h3>
+          <p>Outdoor equipment and portable generators. Delivery, setup, and basic operation walkthrough available.</p>
+          <ul class="list mt-2">
+            <li>Safe fuel handling</li>
+            <li>Startup & function test</li>
+            <li>Customer walkthrough</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="icon">🪛</div>
+          <h3>Furniture Assembly</h3>
+          <p>Beds, dressers, desks, tables, fitness equipment, patio sets, and more. We tidy packaging and stage the room.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🔧</div>
+          <h3>Handyman</h3>
+          <p>Small repairs, TV mounting, shelves, curtain rods, minor carpentry and hardware swaps. Quick, clean, and careful.</p>
+        </div>
+        <div class="card">
+          <div class="icon">💦</div>
+          <h3>Pressure Washing</h3>
+          <p>Driveways, patios, siding, walkways, outdoor furniture, and storefronts. Brighten curb appeal fast.</p>
+        </div>
+        <div class="card">
+          <div class="icon">📦</div>
+          <h3>Small Item Delivery</h3>
+          <p>Need a couch, mattress, or appliance picked up and dropped off? We offer local delivery with careful loading.</p>
+        </div>
+        <div class="card">
+          <div class="icon">🗓️</div>
+          <h3>Flexible Scheduling</h3>
+          <p>Evenings and weekends available. We work around your timeline and keep communication clear.</p>
+        </div>
+      </div>
+
+      <div class="chips mt-6">
+        <span class="chip">Monterey</span>
+        <span class="chip">Salinas</span>
+        <span class="chip">Seaside</span>
+        <span class="chip">Marina</span>
+        <span class="chip">Santa Cruz</span>
+        <span class="chip">Watsonville</span>
+        <span class="chip">Capitola</span>
+        <span class="chip">Scotts Valley</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section id="reviews">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">What Customers Say</h2>
+        <p class="kicker">Real feedback from real jobs.</p>
+      </div>
+      <div class="carousel" aria-label="Reviews carousel">
+        <article class="review">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>“The team was respectful and easy to communicate with. I felt comfortable the whole time. Five stars!”</p>
+          <div class="reviewer">— Michelle M.</div>
+        </article>
+        <article class="review">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>“So kind and professional. Great communication and they moved my mattress with care. Highly recommend.”</p>
+          <div class="reviewer">— Carli</div>
+        </article>
+        <article class="review">
+          <div class="stars" aria-hidden="true">★★★★★</div>
+          <p>“Fast booking, arrived on time, and the assembly was perfect. Will definitely use SwiftMove again.”</p>
+          <div class="reviewer">— J.S.</div>
+        </article>
+      </div>
+      <p class="mini mt-3">Have we helped you recently? <a href="#contact">Leave a review or text us your feedback.</a></p>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Recent Work</h2>
+        <p class="kicker">A few shots from jobs around the area.</p>
+      </div>
+      <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1600490036275-35f7aa8c0f62?q=80&w=800&auto=format&fit=crop" alt="Assembled modern desk" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=800&auto=format&fit=crop" alt="Living room after furniture assembly" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=800&auto=format&fit=crop" alt="Pressure washed patio" loading="lazy" />
+        <img src="https://images.unsplash.com/photo-1586201375761-83865001e31b?q=80&w=800&auto=format&fit=crop" alt="Appliance installation" loading="lazy" />
+      </div>
+      <p class="mini mt-3">Replace these photos with your own: upload images to your repo (e.g., <code>assets/</code>) and update the <code>src</code> URLs.</p>
+    </div>
+  </section>
+
+  <!-- Booking / Quote -->
+  <section id="booking">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Book an Appointment</h2>
+        <p class="kicker">Quick quote in minutes.</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Option A — Google Form (Simple)</h3>
+          <p class="mini">Create a Google Form that collects: Name, Phone, Address, Service Needed, Preferred Date/Time, Photos (optional). Then paste your form link below.</p>
+          <p class="mt-2">
+            <a class="btn primary" href="https://forms.gle/YOUR_FORM_ID" target="_blank" rel="noopener">Open Booking Form</a>
+          </p>
+          <p class="mini">Replace <code>YOUR_FORM_ID</code> with your actual form link.</p>
+        </div>
+        <div class="card">
+          <h3>Option B — Calendly (Live Scheduling)</h3>
+          <p class="mini">Create a free Calendly link and paste it below to let customers book time slots.</p>
+          <p class="mt-2">
+            <a class="btn" href="https://calendly.com/YOUR_HANDLE" target="_blank" rel="noopener">Book on Calendly</a>
+          </p>
+          <p class="mini">Replace <code>YOUR_HANDLE</code> with your Calendly username.</p>
+        </div>
+      </div>
+      <div class="mt-6">
+        <p class="mini">Prefer to chat first? Call or text <a href="tel:+18317839010">(831) 783‑9010</a> or email <a href="mailto:Esmarketestate@gmail.com">Esmarketestate@gmail.com</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">About SwiftMove</h2>
+        <p class="kicker">Proudly veteran-operated and community focused.</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <p>SwiftMove is a locally owned, veteran-operated service company providing appliance installation, furniture assembly, handyman work, and pressure washing. We believe in clear communication, respectful service, and leaving every space better than we found it.</p>
+          <p class="mt-2">Founded by Eribey, a USMC veteran, SwiftMove brings the discipline, reliability, and work ethic you expect — with friendly, professional care.</p>
+          <div class="badges mt-3">
+            <span class="badge">Veteran Operated</span>
+            <span class="badge">Locally Owned</span>
+            <span class="badge">Upfront Pricing</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3>Why choose us?</h3>
+          <ul class="list">
+            <li>Professional, on-time arrivals</li>
+            <li>Careful, clean workmanship</li>
+            <li>Easy booking and clear updates</li>
+            <li>Trusted by neighbors across Monterey & Santa Cruz</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">FAQs</h2>
+        <p class="kicker">Quick answers to common questions.</p>
+      </div>
+      <div class="grid cols-2">
+        <details open>
+          <summary>Do you provide tools and materials?</summary>
+          <p>Yes — we arrive with the tools required for your booked service. If special parts or materials are needed, we’ll coordinate that before the job.</p>
+        </details>
+        <details>
+          <summary>Which areas do you serve?</summary>
+          <p>Monterey County, Santa Cruz County, and nearby communities. Contact us to confirm service for your address.</p>
+        </details>
+        <details>
+          <summary>How do quotes and pricing work?</summary>
+          <p>We provide upfront estimates based on the scope you share. For larger or variable jobs, we can do on-site quotes.</p>
+        </details>
+        <details>
+          <summary>Are you available on weekends?</summary>
+          <p>Yes — we offer flexible scheduling, including evenings and weekends.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-head">
+        <h2 class="section-title">Contact</h2>
+        <p class="kicker">We’re quick to reply.</p>
+      </div>
+      <div class="grid cols-2">
+        <div class="card">
+          <h3>Call / Text</h3>
+          <p><a class="btn" href="tel:+18317839010">📞 (831) 783‑9010</a></p>
+          <h3 class="mt-4">Email</h3>
+          <p><a class="btn" href="mailto:Esmarketestate@gmail.com">✉️ Esmarketestate@gmail.com</a></p>
+          <h3 class="mt-4">Social</h3>
+          <p class="mini">Add your links here (Facebook, Instagram, X).</p>
+        </div>
+        <div class="card">
+          <h3>Service Area</h3>
+          <p>Based in Monterey & Santa Cruz counties.</p>
+          <iframe title="Map" style="border:0; width:100%; height:260px; border-radius:12px" loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d636034.059643301!2d-122.63!3d36.82!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808de3f97d4a1c1b%3A0x68b3a7a7d3a2c7c!2sMonterey%20County%2C%20CA!5e0!3m2!1sen!2sus!4v1680000000000"></iframe>
+          <p class="mini mt-2">Customize this map to your exact location or coverage.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container foot">
+      <div>
+        <div class="brand">
+          <div class="logo" aria-hidden="true">SM</div>
+          <strong>SwiftMove</strong>
+        </div>
+        <p class="mini mt-2">Fast, reliable home services: appliance installation, furniture assembly, handyman work, and pressure washing.</p>
+        <div class="badges mt-3">
+          <span class="badge">Veteran Operated</span>
+          <span class="badge">Local • Friendly</span>
+        </div>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <p class="mini"><a href="#services">Services</a> • <a href="#reviews">Reviews</a> • <a href="#gallery">Photos</a> • <a href="#booking">Book</a></p>
+        <p class="mini"><a href="#" data-open="privacy">Privacy Policy</a> • <a href="#" data-open="terms">Terms of Service</a></p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p class="mini">Phone: <a href="tel:+18317839010">(831) 783‑9010</a><br>Email: <a href="mailto:Esmarketestate@gmail.com">Esmarketestate@gmail.com</a></p>
+        <p class="mini">Mon–Sun • By appointment</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Privacy Modal -->
+  <div class="modal" id="privacy-modal" role="dialog" aria-modal="true" aria-labelledby="privacy-title">
+    <div class="modal-card">
+      <h2 id="privacy-title">Privacy Policy</h2>
+      <p><em>Last updated: <!-- Set date --> August 22, 2025</em></p>
+      <p>SwiftMove ("we," "us," or "our") operates this website to provide information about our services and accept service inquiries. We respect your privacy.</p>
+      <h3>Information We Collect</h3>
+      <ul class="list">
+        <li>Contact details you submit (name, phone, email, address).</li>
+        <li>Service details (what you need done, preferred dates, photos you choose to send).</li>
+        <li>Basic analytics (page views) through your browser or any embedded tools you use (e.g., Google Forms or Calendly).</li>
+      </ul>
+      <h3>How We Use Information</h3>
+      <ul class="list">
+        <li>To respond to inquiries, schedule services, and provide quotes.</li>
+        <li>To improve our services and website content.</li>
+        <li>To send updates related to your requested service.</li>
+      </ul>
+      <h3>Sharing</h3>
+      <p>We do not sell your personal information. We may share limited details with service tools we use (e.g., Google Forms, Calendly) to process your booking, or as required by law.</p>
+      <h3>Data Retention</h3>
+      <p>We retain inquiry details for as long as necessary to provide services and keep business records. You may request deletion by contacting us.</p>
+      <h3>Your Choices</h3>
+      <p>You can request access, correction, or deletion of your information by emailing <a href="mailto:Esmarketestate@gmail.com">Esmarketestate@gmail.com</a>.</p>
+      <h3>Third-Party Links</h3>
+      <p>Our site may link to third-party services. Their privacy practices are their own; review their policies.</p>
+      <h3>Contact</h3>
+      <p>Questions? Email <a href="mailto:Esmarketestate@gmail.com">Esmarketestate@gmail.com</a>.</p>
+      <div class="modal-actions">
+        <button class="btn" data-close>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Terms Modal -->
+  <div class="modal" id="terms-modal" role="dialog" aria-modal="true" aria-labelledby="terms-title">
+    <div class="modal-card">
+      <h2 id="terms-title">Terms of Service</h2>
+      <p><em>Last updated: <!-- Set date --> August 22, 2025</em></p>
+      <h3>1. Services</h3>
+      <p>SwiftMove provides appliance installation, furniture assembly, handyman work, pressure washing, and related services as booked by you (the "Customer").</p>
+      <h3>2. Estimates & Payment</h3>
+      <ul class="list">
+        <li>Estimates are based on the scope you provide and may be adjusted if the scope changes.</li>
+        <li>Payment is due upon completion unless otherwise agreed. We accept common payment methods (confirm at booking).</li>
+      </ul>
+      <h3>3. Customer Responsibilities</h3>
+      <ul class="list">
+        <li>Ensure safe access to the work area and disclose any hazards.</li>
+        <li>For gas and electrical work, Customer is responsible for providing compliant hookups and shutoff access unless we explicitly include materials/parts.</li>
+        <li>Secure pets and valuables prior to service.</li>
+      </ul>
+      <h3>4. Limits & Exclusions</h3>
+      <ul class="list">
+        <li>We are not responsible for pre‑existing damage or concealed conditions.</li>
+        <li>Pressure washing may not remove all stains and can expose underlying wear.</li>
+        <li>We do not perform code inspections or permitting unless agreed in writing.</li>
+      </ul>
+      <h3>5. Cancellations</h3>
+      <p>Please notify us as early as possible to reschedule. Short‑notice cancellations may incur a fee if we have already mobilized.</p>
+      <h3>6. Warranty</h3>
+      <p>We stand behind our workmanship. If there is an issue with our work within 14 days, contact us and we will make it right.</p>
+      <h3>7. Liability</h3>
+      <p>To the fullest extent permitted by law, SwiftMove’s liability is limited to the amount paid for the specific service giving rise to the claim.</p>
+      <h3>8. Contact</h3>
+      <p>For questions about these Terms, email <a href="mailto:Esmarketestate@gmail.com">Esmarketestate@gmail.com</a>.</p>
+      <div class="modal-actions">
+        <button class="btn" data-close>Close</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Open/Close Modals
+    const openLinks = document.querySelectorAll('[data-open]');
+    const closeButtons = document.querySelectorAll('[data-close]');
+    const modals = {
+      privacy: document.getElementById('privacy-modal'),
+      terms: document.getElementById('terms-modal')
+    };
+    openLinks.forEach(link => link.addEventListener('click', e => {
+      e.preventDefault();
+      const id = link.getAttribute('data-open');
+      modals[id]?.classList.add('open');
+    }));
+    closeButtons.forEach(btn => btn.addEventListener('click', () => {
+      Object.values(modals).forEach(m => m.classList.remove('open'));
+    }));
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') Object.values(modals).forEach(m => m.classList.remove('open')); });
+
+    // Accessible backdrop close
+    Object.values(modals).forEach(m => m.addEventListener('click', (e) => { if (e.target === m) m.classList.remove('open'); }));
+  </script>
+
+  <!-- LocalBusiness Schema for better SEO -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "SwiftMove",
+    "image": "https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8?q=80&w=1200&auto=format&fit=crop",
+    "telephone": "+1-831-783-9010",
+    "email": "Esmarketestate@gmail.com",
+    "areaServed": ["Monterey County", "Santa Cruz County"],
+    "url": "https://YOUR-USERNAME.github.io/YOUR-REPO/",
+    "sameAs": [],
+    "description": "Appliance installation, furniture assembly, handyman, and pressure washing services.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Monterey County",
+      "addressRegion": "CA",
+      "addressCountry": "US"
+    }
+  }
+  </script>
+</body>
+</html>
