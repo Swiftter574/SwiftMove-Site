@@ -8,7 +8,7 @@
   <meta property="og:title" content="SwiftMove — Fast, Reliable Home Services" />
   <meta property="og:description" content="Appliance installation, furniture assembly, handyman, and pressure washing. Locally owned & veteran operated." />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://YOUR-USERNAME.github.io/YOUR-REPO/" />
+  <meta property="og:url" content="https://Swiftter574.github.io/Swiftmove-Site/" />
   <meta property="og:image" content="https://images.unsplash.com/photo-1581578025234-95d9c9d3c3ed?q=80&w=1200&auto=format&fit=crop" />
 
   <!-- Fonts -->
@@ -302,7 +302,7 @@
         <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=800&auto=format&fit=crop" alt="Pressure washed patio" loading="lazy" />
         <img src="https://images.unsplash.com/photo-1586201375761-83865001e31b?q=80&w=800&auto=format&fit=crop" alt="Appliance installation" loading="lazy" />
       </div>
-      <p class="mini mt-3">Replace these photos with your own: upload images to your repo (e.g., <code>assets/</code>) and update the <code>src</code> URLs.</p>
+      <p class="mini mt-3">Replace these photos with your own: upload images to your repo (e.g., <code>assets/</code>) and update the <code>src</code> s.</p>
     </div>
   </section>
 
@@ -552,7 +552,7 @@
     "telephone": "+1-831-783-9010",
     "email": "Esmarketestate@gmail.com",
     "areaServed": ["Monterey County", "Santa Cruz County"],
-    "url": "https://YOUR-USERNAME.github.io/YOUR-REPO/",
+    "url": "https://Swiftter574.github.io/SwiftMove-Site/",
     "sameAs": [],
     "description": "Appliance installation, furniture assembly, handyman, and pressure washing services.",
     "address": {
