@@ -318,7 +318,7 @@
           <h3>Option A — Google Form (Simple)</h3>
           <p class="mini">Create a Google Form that collects: Name, Phone, Address, Service Needed, Preferred Date/Time, Photos (optional). Then paste your form link below.</p>
           <p class="mt-2">
-            <a class="btn primary" href="https://forms.gle/YOUR_FORM_ID" target="_blank" rel="noopener">Open Booking Form</a>
+            <a class="btn primary" href="https://docs.google.com/forms/d/e/1FAIpQLSdU_9Je91Gn2PZiMNwpkCdTuw-ClGOK0rgJOko4IQ9Fm6j69g/viewform?usp=sharing&ouid=104961936749421923238" target="_blank" rel="noopener">Open Booking Form</a>
           </p>
           <p class="mini">Replace <code>YOUR_FORM_ID</code> with your actual form link.</p>
         </div>
@@ -332,7 +332,7 @@
         </div>
       </div>
       <div class="mt-6">
-        <p class="mini">Prefer to chat first? Call or text <a href="tel:+18317839010">(831) 783‑9010</a> or email <a href="mailto:Esmarketestate@gmail.com">Esmarketestate@gmail.com</a>.</p>
+        <p class="mini">Prefer to chat first? Call or text <a href="tel:+18317839010">(831) 783‑9010</a> or email <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a>.</p>
       </div>
     </div>
   </section>
@@ -407,7 +407,7 @@
           <h3>Call / Text</h3>
           <p><a class="btn" href="tel:+18317839010">📞 (831) 783‑9010</a></p>
           <h3 class="mt-4">Email</h3>
-          <p><a class="btn" href="mailto:Esmarketestate@gmail.com">✉️ Esmarketestate@gmail.com</a></p>
+          <p><a class="btn" href="mailto:swiftmovexeme@gmail.com">✉️ swiftmovexeme@gmail.com</a></p>
           <h3 class="mt-4">Social</h3>
           <p class="mini">Add your links here (Facebook, Instagram, X).</p>
         </div>
@@ -442,7 +442,7 @@
       </div>
       <div>
         <h4>Contact</h4>
-        <p class="mini">Phone: <a href="tel:+18317839010">(831) 783‑9010</a><br>Email: <a href="mailto:Esmarketestate@gmail.com">Esmarketestate@gmail.com</a></p>
+        <p class="mini">Phone: <a href="tel:+18317839010">(831) 783‑9010</a><br>Email: <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a></p>
         <p class="mini">Mon–Sun • By appointment</p>
       </div>
     </div>
@@ -471,11 +471,11 @@
       <h3>Data Retention</h3>
       <p>We retain inquiry details for as long as necessary to provide services and keep business records. You may request deletion by contacting us.</p>
       <h3>Your Choices</h3>
-      <p>You can request access, correction, or deletion of your information by emailing <a href="mailto:Esmarketestate@gmail.com">Esmarketestate@gmail.com</a>.</p>
+      <p>You can request access, correction, or deletion of your information by emailing <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a>.</p>
       <h3>Third-Party Links</h3>
       <p>Our site may link to third-party services. Their privacy practices are their own; review their policies.</p>
       <h3>Contact</h3>
-      <p>Questions? Email <a href="mailto:Esmarketestate@gmail.com">Esmarketestate@gmail.com</a>.</p>
+      <p>Questions? Email <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a>.</p>
       <div class="modal-actions">
         <button class="btn" data-close>Close</button>
       </div>
@@ -513,7 +513,7 @@
       <h3>7. Liability</h3>
       <p>To the fullest extent permitted by law, SwiftMove’s liability is limited to the amount paid for the specific service giving rise to the claim.</p>
       <h3>8. Contact</h3>
-      <p>For questions about these Terms, email <a href="mailto:Esmarketestate@gmail.com">Esmarketestate@gmail.com</a>.</p>
+      <p>For questions about these Terms, email <a href="mailto:swiftmovexeme@gmail.com">swiftmovexeme@gmail.com</a>.</p>
       <div class="modal-actions">
         <button class="btn" data-close>Close</button>
       </div>
@@ -550,7 +550,7 @@
     "name": "SwiftMove",
     "image": "https://images.unsplash.com/photo-1581579188871-45ea61f2a0c8?q=80&w=1200&auto=format&fit=crop",
     "telephone": "+1-831-783-9010",
-    "email": "Esmarketestate@gmail.com",
+    "email": "swiftmovexeme@gmail.com",
     "areaServed": ["Monterey County", "Santa Cruz County"],
     "url": "https://Swiftter574.github.io/SwiftMove-Site/",
     "sameAs": [],
