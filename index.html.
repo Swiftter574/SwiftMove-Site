@@ -326,7 +326,7 @@
           <h3>Option B — Calendly (Live Scheduling)</h3>
           <p class="mini">Create a free Calendly link and paste it below to let customers book time slots.</p>
           <p class="mt-2">
-            <a class="btn" href="https://calendly.com/YOUR_HANDLE" target="_blank" rel="noopener">Book on Calendly</a>
+            <a class="btn" href="https://calendly.com/swiftmove" target="_blank" rel="noopener">Book on Calendly</a>
           </p>
           <p class="mini">Replace <code>YOUR_HANDLE</code> with your Calendly username.</p>
         </div>
